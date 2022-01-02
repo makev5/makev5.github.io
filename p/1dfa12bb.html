@@ -117,7 +117,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://image.xiaoke6.cn/images/bloghash.png">
 <meta property="article:published_time" content="2022-01-02T13:44:56.000Z">
-<meta property="article:modified_time" content="2022-01-02T14:20:30.436Z">
+<meta property="article:modified_time" content="2022-01-02T14:27:03.335Z">
 <meta property="article:author" content="网行侠">
 <meta property="article:tag" content="Java">
 <meta property="article:tag" content="JavaSE">
@@ -395,7 +395,7 @@
                 
               
 
-              <time title="创建时间：2022-01-02 21:44:56 / 修改时间：22:20:30" itemprop="dateCreated datePublished" datetime="2022-01-02T21:44:56+08:00">2022-01-02</time>
+              <time title="创建时间：2022-01-02 21:44:56 / 修改时间：22:27:03" itemprop="dateCreated datePublished" datetime="2022-01-02T21:44:56+08:00">2022-01-02</time>
             
 
             
@@ -528,7 +528,6 @@
 <li>重写方法时，一定要注意排序规则必须按照要求的主要条件和次要条件来写</li>
 </ul>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Student</span> <span class="keyword">implements</span> <span class="title">Comparable</span>&lt;<span class="title">Student</span>&gt; </span>&#123;</span><br><span class="line">    ...</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">compareTo</span><span class="params">(Student s)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//return -1; //-1按照降序，1按照升序，0重复元素不添加</span></span><br><span class="line">        <span class="comment">// 按照年龄从小到大排序,年龄相同，按照姓名字母顺序排序</span></span><br><span class="line">        <span class="keyword">int</span> num = <span class="keyword">this</span>.age - s.age;</span><br><span class="line">        <span class="keyword">int</span> num2 = num==<span class="number">0</span>?<span class="keyword">this</span>.name.compareTo(s.name):num;</span><br><span class="line">        <span class="keyword">return</span> num2;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 
 
 <p>比较器排序Comparator的使用</p>
