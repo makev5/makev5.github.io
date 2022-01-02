@@ -3,12 +3,10 @@
   <entry>
     <title>Java集合知识点总结</title>
     <url>/p/1dfa12bb.html</url>
-    <content><![CDATA[<h1 id="List"><a href="#List" class="headerlink" title="List"></a>List</h1><h3 id="数组（ArraryList）"><a href="#数组（ArraryList）" class="headerlink" title="数组（ArraryList）"></a>数组（ArraryList）</h3><p>数组是一种<strong>查询修改快</strong>的模型（对比链表）  </p>
-<h3 id="链表（LinkedList）"><a href="#链表（LinkedList）" class="headerlink" title="链表（LinkedList）"></a>链表（LinkedList）</h3><p>链表是一种<strong>增删快</strong>的模型（对比数组）</p>
-<p>特有功能：</p>
-<p>addFist，addLast，getFirst，getLast，removeFirst，removeLast</p>
-<h1 id="Set"><a href="#Set" class="headerlink" title="Set"></a>Set</h1><p>Set集合特点</p>
-<ul>
+    <content><![CDATA[<h1 id="List"><a href="#List" class="headerlink" title="List"></a>List</h1><h3 id="数组ArraryList"><a href="#数组ArraryList" class="headerlink" title="数组ArraryList"></a>数组ArraryList</h3><p>数组是一种<strong>查询修改快</strong>的模型（对比链表）  </p>
+<h3 id="链表LinkedList"><a href="#链表LinkedList" class="headerlink" title="链表LinkedList"></a>链表LinkedList</h3><p>链表是一种<strong>增删快</strong>的模型（对比数组）</p>
+<p>特有功能：addFist，addLast，getFirst，getLast，removeFirst，removeLast</p>
+<h1 id="Set"><a href="#Set" class="headerlink" title="Set"></a>Set</h1><h3 id="Set集合特点"><a href="#Set集合特点" class="headerlink" title="Set集合特点"></a>Set集合特点</h3><ul>
 <li><p>不包含重复元素的集合</p>
 </li>
 <li><p>没有带索引的方法，不能用普通for循环遍历</p>
