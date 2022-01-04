@@ -6,7 +6,7 @@
   <link href="https://makev5.github.io/atom.xml" rel="self"/>
   
   <link href="https://makev5.github.io/"/>
-  <updated>2022-01-04T07:17:59.797Z</updated>
+  <updated>2022-01-04T13:56:02.514Z</updated>
   <id>https://makev5.github.io/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>多线程知识点总结</title>
+    <link href="https://makev5.github.io/p/66e505b.html"/>
+    <id>https://makev5.github.io/p/66e505b.html</id>
+    <published>2022-01-04T10:51:18.000Z</published>
+    <updated>2022-01-04T13:56:02.514Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="多线程知识总结"><a href="#多线程知识总结" class="headerlink" title="多线程知识总结"></a>多线程知识总结</h2><h2 id="什么是进程"><a href="#什么是进程" class="headerlink" title="什么是进程"></a>什么是进程</h2><p>进程：是一个正在运行的程序</p><ul><li>是系统进行资源分配和调用的独立单位</li><li>每一个进程都有它自己的内存空间和系统资源</li></ul><h2 id="什么是线程"><a href="#什么是线程" class="headerlink" title="什么是线程"></a>什么是线程</h2><p>线程：是进程中的单个顺序控制流，是一条执行的路径</p><ul><li>单线程：一个程序如果只有一条执行的路径，则成为单线程程序</li><li>多线程：一个程序如果有多条执行的路径，则成为多线程程序</li></ul><h2 id="多线程的实现"><a href="#多线程的实现" class="headerlink" title="多线程的实现"></a>多线程的实现</h2><h3 id="方式1：继承Thread类"><a href="#方式1：继承Thread类" class="headerlink" title="方式1：继承Thread类"></a>方式1：继承Thread类</h3><ul><li>定义一个类MyThread继承Thread类</li><li>在MyThread类中重写run()方法</li><li>创建MyThread类的对象</li><li>启动线程</li></ul><h3 id="方式2：实现Runnable接口"><a href="#方式2：实现Runnable接口" class="headerlink" title="方式2：实现Runnable接口"></a>方式2：实现Runnable接口</h3><ul><li>定义一个类MyRunnable实现Runnable接口</li><li>在MyRunnable类中重写run()方法</li><li>创建MyRunnable类的对象</li><li>创建Thread类的对象，把MyRunnable对象作为构造方法的参数</li><li>启动线程</li></ul><p>相比继承Thread类，实现Runnable接口的好处:</p><ul><li>避免了Java单继承的局限性</li><li>适合多个相同程序的代码去处理同一个资源的情况，把线程和程序的代码、数据有效分离，较好的体现了面向对象的设计思想</li></ul><p>线程两种调度模型：</p><ul><li><p>分时调度模型：所有线程轮流使用CPU的使用权，平均分配每个线程占用CPU的时间片</p></li><li><p>抢占式调度模型：优先让优先级高的线程使用CPU，如果线程的优先级相同，那么会随机一个，优先级高的线程获取的CPU时间片相对多一些</p><p>多线程程序的执行是有随机性的，因为谁抢到CPU使用权是不一定的。</p></li></ul><p>Thread类中设置和获取线程优先级的方法</p><ul><li><p>getPriority()：返回此线程的优先级</p></li><li><p>setPriority()：更改此线程的优先级</p><p>线程默认优先级是<strong>5</strong>；线程优先级的范围是：<strong>1-10</strong></p><p>线程优先级高仅仅表示获取的CPU时间片的几率高</p></li></ul><h2 id="线程控制"><a href="#线程控制" class="headerlink" title="线程控制"></a>线程控制</h2><table><thead><tr><th align="center">方法名</th><th align="center">说明</th></tr></thead><tbody><tr><td align="center">static void sleep(long millis)</td><td align="center">使用当前正在执行的线程停留（暂停执行）指定的毫秒数</td></tr><tr><td align="center">void join()</td><td align="center">等待这个线程死亡</td></tr><tr><td align="center">void setDaemon(boolean on)</td><td align="center">将此线程标记为守护线程，当运行的线程都是守护线程时，Java虚拟机将退出</td></tr></tbody></table><h2 id="线程的生命周期"><a href="#线程的生命周期" class="headerlink" title="线程的生命周期"></a>线程的生命周期</h2><p><img src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fwww.xfnihao.cn%2Fupload%2F2020%2F4%2Fimage-3c19d0b1afc1478f8f9d4e8fd304265c.png&refer=http%3A%2F%2Fwww.xfnihao.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1643890180&t=3d49254cf84beaacd778653a950edf46"></p><h2 id="线程同步"><a href="#线程同步" class="headerlink" title="线程同步"></a>线程同步</h2><p>同步代码块：锁多条语句操作共享数据，可以使用同步代码块实现</p><ul><li><p>格式</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">synchronized</span>()&#123;</span><br><span class="line">多条语句操作共享数据的代码</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li><li><p>synchronized(任意对象)：就相当于给代码加锁了，任意对象就可以看成1一把锁</p></li></ul><p>同步的好处和弊端：</p><ul><li>好处：解决了多线程的数据安全问题</li><li>弊端：当线程很多时，因为每个线程都会去判断同步上的锁，这是很消耗资源的，无形中就会降低程序的运行效率</li></ul><p>同步方法：就是把synchronized关键字加到方法上</p><ul><li><p>格式</p><p>修饰符 synchronized 返回值类型 方法名(参数){ }</p></li></ul><p>同步方法的锁对象是什么呢？</p><ul><li>  <strong>this</strong></li></ul><p>同步静态方法：就是把synchronized关键字加到静态方法上</p><ul><li><p>格式：</p><p>修饰符 static synchronized 返回值类型 方法名(参数){ }</p></li></ul><p>同步静态方法的锁对象是什么呢？</p><ul><li><strong>类名.class</strong></li></ul><p>线程安全的类：StringBuffer、Vector、Hashtable</p><p>StringBuffer</p><ul><li><p>线程安全，可变的字符序列</p></li><li><p>从JDK 5开始，被StringBuilder替代。通常应该使用StringBuilder类，因为它支持所有相同的操作，但它的速度更快，因为它不进行同步</p></li></ul><p>Vector</p><ul><li>从java 2平台V1.2，该类改进了List接口，使其成为Java Collections  Framework成员。Vector是同步的。如果一个线程安全的实现是不需要的，建议使用ArrayList代替Vector</li></ul><p>Hashtable</p><ul><li><p>该类实现了一个哈希表，它将键映射到值。任何非null对象都可以用作键或者值</p></li><li><p>作为java 2平台V1.2，该类改进了Map接口，使其成为 Java Collections  Framework成员。Hashtable是同步的。如果一个线程安全的实现是不需要的，建议使用HashMap代替Hashtable</p></li></ul>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;多线程知识总结&quot;&gt;&lt;a href=&quot;#多线程知识总结&quot; class=&quot;headerlink&quot; title=&quot;多线程知识总结&quot;&gt;&lt;/a&gt;多线程知识总结&lt;/h2&gt;&lt;h2 id=&quot;什么是进程&quot;&gt;&lt;a href=&quot;#什么是进程&quot; class=&quot;headerlink&quot; ti</summary>
+      
+    
+    
+    
+    
+    <category term="多线程" scheme="https://makev5.github.io/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/"/>
+    
+  </entry>
   
   <entry>
     <title>IO流基本知识总结</title>
