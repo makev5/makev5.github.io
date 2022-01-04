@@ -289,6 +289,103 @@
       </tags>
   </entry>
   <entry>
+    <title>Java集合知识点总结</title>
+    <url>/p/1dfa12bb.html</url>
+    <content><![CDATA[<h2 id="List"><a href="#List" class="headerlink" title="List"></a>List</h2><h3 id="数组ArraryList"><a href="#数组ArraryList" class="headerlink" title="数组ArraryList"></a>数组ArraryList</h3><p>数组是一种<strong>查询修改快</strong>的模型（对比链表）  </p>
+<h3 id="链表LinkedList"><a href="#链表LinkedList" class="headerlink" title="链表LinkedList"></a>链表LinkedList</h3><p>链表是一种<strong>增删快</strong>的模型（对比数组）</p>
+<p>特有功能：addFist，addLast，getFirst，getLast，removeFirst，removeLast</p>
+<h2 id="Set"><a href="#Set" class="headerlink" title="Set"></a>Set</h2><h3 id="Set集合特点"><a href="#Set集合特点" class="headerlink" title="Set集合特点"></a>Set集合特点</h3><ul>
+<li><p>不包含重复元素的集合</p>
+</li>
+<li><p>没有带索引的方法，不能用普通for循环遍历</p>
+</li>
+</ul>
+<p>HashSet：对集合的迭代顺序不作任何保证</p>
+<h3 id="哈希值"><a href="#哈希值" class="headerlink" title="哈希值"></a>哈希值</h3><p>哈希值：是JDK根据对象的<strong>地址</strong>或者<strong>字符串</strong>或者<strong>数字</strong>算出来的int类型的<strong>数值</strong></p>
+<p>Object类中有一个方法可以获取对象的哈希值</p>
+<ul>
+<li>public int hashCode(): 返回对象的哈希值</li>
+</ul>
+<p>对象的哈希值特点</p>
+<ul>
+<li>同一个对象多次调用hashCode()返回的哈希值是相同的</li>
+<li>默认情况下，不同对象的哈希值是不同的。而重写hashCode()方法，可以实现让不同对象的哈希值相同</li>
+</ul>
+<h3 id="HashSet"><a href="#HashSet" class="headerlink" title="HashSet"></a>HashSet</h3><p>HashSet集合特点</p>
+<ul>
+<li>底层数据结构是哈希表</li>
+<li>对集合的迭代顺序不作任何保证，也就是说不保证存储和取出的元素顺序一致</li>
+<li>没有带索引的方法，所以不能使用普通的for循环遍历</li>
+<li>由于是Set集合，所以是不包含重复元素的集合</li>
+</ul>
+<p>HashSet集合保证元素唯一性源码分析</p>
+<p><img src="http://image.xiaoke6.cn/images/bloghash.png"></p>
+<p>HashSet集合存储元素：</p>
+<ul>
+<li>要保证元素唯一性，需要重写<strong>hashCode()和equals()</strong></li>
+</ul>
+<h3 id="LinkedHashSet"><a href="#LinkedHashSet" class="headerlink" title="LinkedHashSet"></a>LinkedHashSet</h3><p>LinkedHashSet集合特点</p>
+<ul>
+<li>哈希表和链表实现的Set接口，具有可预测的迭代次序</li>
+<li>由链表保证元素有序，也就是说元素的存储和取出顺序是一致的</li>
+<li>由哈希表保证元素唯一，也就是说没有重复的元素</li>
+</ul>
+<h3 id="TreeSet"><a href="#TreeSet" class="headerlink" title="TreeSet"></a>TreeSet</h3><p>TreeSet集合特点</p>
+<ul>
+<li><p>元素有序，这里的顺序不是指存储和取出的顺序，而是按照一定的规则进行排序，具体排序方式取决于构造方法</p>
+<p>TreeSet(): 根据其元素的自然排序进行排序</p>
+<p>TreeSet(Comparator comparator): 根据指定的比较器进行排序</p>
+</li>
+<li><p>没有带索引的方法，所以不能使用普通的for循环遍历</p>
+</li>
+<li><p>由于是Set集合，所以不包含重复元素的集合</p>
+</li>
+</ul>
+<p>自然排序Comparable的使用</p>
+<ul>
+<li>用TreeSet集合存储自定义对象，无参构造方法使用的是<strong>自然排序</strong>对元素进行排序的</li>
+<li>自然排序，就是让元素所属的类实现Comparable接口，重写comparaTo()方法</li>
+<li>重写方法时，一定要注意排序规则必须按照要求的主要条件和次要条件来写</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Student</span> <span class="keyword">implements</span> <span class="title">Comparable</span>&lt;<span class="title">Student</span>&gt; </span>&#123;</span><br><span class="line">    ...</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">compareTo</span><span class="params">(Student s)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//return -1; //-1按照降序，1按照升序，0重复元素不添加</span></span><br><span class="line">        <span class="comment">// 按照年龄从小到大排序,年龄相同，按照姓名字母顺序排序</span></span><br><span class="line">        <span class="keyword">int</span> num = <span class="keyword">this</span>.age - s.age;</span><br><span class="line">        <span class="keyword">int</span> num2 = num==<span class="number">0</span>?<span class="keyword">this</span>.name.compareTo(s.name):num;</span><br><span class="line">        <span class="keyword">return</span> num2;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<p>比较器排序Comparator的使用</p>
+<ul>
+<li>用TreeSet集合存储自定义对象，带参构造方法使用的是比较器排序对元素进行排序的</li>
+<li>比较器排序，就是让集合构造方法接受Comparator的实现类对象，重写compare(T o1, T o2)方法</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">TreeSet&lt;Student&gt; ts = <span class="keyword">new</span> TreeSet&lt;&gt;(<span class="keyword">new</span> Comparator&lt;Student&gt;() &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">compare</span><span class="params">(Student s1, Student s2)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 按照年龄从小到大排序,年龄相同，按照姓名字母顺序排序</span></span><br><span class="line">        <span class="comment">//this.age - s.age</span></span><br><span class="line">        <span class="comment">//s1,s1</span></span><br><span class="line">        <span class="keyword">int</span> num = s1.getAge() - s2.getAge();</span><br><span class="line">        <span class="keyword">int</span> num2 = num==<span class="number">0</span>? s1.getName().compareTo(s2.getName()):num;</span><br><span class="line">        <span class="keyword">return</span> num2;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+
+
+
+<h2 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h2><p><strong>Map集合遍历</strong></p>
+<p><strong>方法一：增强for循环中使用entry来遍历</strong></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Map&lt;Integer, Integer&gt; map = <span class="keyword">new</span> HashMap&lt;Integer, Integer&gt;();</span><br><span class="line"> </span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (Map.Entry&lt;Integer, Integer&gt; entry : map.entrySet()) &#123;</span><br><span class="line"> </span><br><span class="line">    System.out.println(<span class="string">&quot;Key = &quot;</span> + entry.getKey() + <span class="string">&quot;, Value = &quot;</span> + entry.getValue());</span><br><span class="line"> </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>方法二：在for-each循环中遍历keys或values</strong></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Map&lt;Integer, Integer&gt; map = <span class="keyword">new</span> HashMap&lt;Integer, Integer&gt;();</span><br><span class="line"> </span><br><span class="line"><span class="comment">//遍历map中的键</span></span><br><span class="line"> </span><br><span class="line"><span class="keyword">for</span> (Integer key : map.keySet()) &#123;</span><br><span class="line"> </span><br><span class="line">    System.out.println(<span class="string">&quot;Key = &quot;</span> + key);</span><br><span class="line"> </span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="comment">//遍历map中的值</span></span><br><span class="line"> </span><br><span class="line"><span class="keyword">for</span> (Integer value : map.values()) &#123;</span><br><span class="line"> </span><br><span class="line">    System.out.println(<span class="string">&quot;Value = &quot;</span> + value);</span><br><span class="line"> </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>方法三：使用Iterator遍历</strong></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Map&lt;Integer, Integer&gt; map = <span class="keyword">new</span> HashMap&lt;Integer, Integer&gt;();</span><br><span class="line"> </span><br><span class="line">Iterator&lt;Map.Entry&lt;Integer, Integer&gt;&gt; entries = map.entrySet().iterator();</span><br><span class="line"> </span><br><span class="line"><span class="keyword">while</span> (entries.hasNext()) &#123;</span><br><span class="line"> </span><br><span class="line">    Map.Entry&lt;Integer, Integer&gt; entry = entries.next();</span><br><span class="line"> </span><br><span class="line">    System.out.println(<span class="string">&quot;Key = &quot;</span> + entry.getKey() + <span class="string">&quot;, Value = &quot;</span> + entry.getValue());</span><br><span class="line"> </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>方法四：通过键找值遍历（效率低）</strong></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Map&lt;Integer, Integer&gt; map = <span class="keyword">new</span> HashMap&lt;Integer, Integer&gt;();</span><br><span class="line"> </span><br><span class="line"><span class="keyword">for</span> (Integer key : map.keySet()) &#123;</span><br><span class="line"> </span><br><span class="line">    Integer value = map.get(key);</span><br><span class="line"> </span><br><span class="line">    System.out.println(<span class="string">&quot;Key = &quot;</span> + key + <span class="string">&quot;, Value = &quot;</span> + value);</span><br><span class="line"> </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>总结：</strong></p>
+<p>如果仅需要键(keys)或值(values)使用方法二。如果你使用的语言版本低于java 5，或是打算在遍历时删除entries，必须使用方法三。否则使用方法一(键值都要)</p>
+]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+        <tag>JavaSE</tag>
+        <tag>Collection</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>多线程知识点总结</title>
     <url>/p/66e505b.html</url>
     <content><![CDATA[<h2 id="多线程知识总结"><a href="#多线程知识总结" class="headerlink" title="多线程知识总结"></a>多线程知识总结</h2><h2 id="什么是进程"><a href="#什么是进程" class="headerlink" title="什么是进程"></a>什么是进程</h2><p>进程：是一个正在运行的程序</p>
@@ -390,124 +487,58 @@
 <li><strong>类名.class</strong></li>
 </ul>
 <p>线程安全的类：StringBuffer、Vector、Hashtable</p>
-<p>StringBuffer</p>
+<p><strong>StringBuffer</strong></p>
 <ul>
 <li><p>线程安全，可变的字符序列</p>
 </li>
 <li><p>从JDK 5开始，被StringBuilder替代。通常应该使用StringBuilder类，因为它支持所有相同的操作，但它的速度更快，因为它不进行同步</p>
 </li>
 </ul>
-<p>Vector</p>
+<p><strong>Vector</strong></p>
 <ul>
 <li>从java 2平台V1.2，该类改进了List接口，使其成为Java Collections  Framework成员。Vector是同步的。如果一个线程安全的实现是不需要的，建议使用ArrayList代替Vector</li>
 </ul>
-<p>Hashtable</p>
+<p><strong>Hashtable</strong></p>
 <ul>
 <li><p>该类实现了一个哈希表，它将键映射到值。任何非null对象都可以用作键或者值</p>
 </li>
 <li><p>作为java 2平台V1.2，该类改进了Map接口，使其成为 Java Collections  Framework成员。Hashtable是同步的。如果一个线程安全的实现是不需要的，建议使用HashMap代替Hashtable</p>
 </li>
 </ul>
+<h2 id="Lock锁"><a href="#Lock锁" class="headerlink" title="Lock锁"></a>Lock锁</h2><p>Lock中提供了获得锁和释放锁的方法</p>
+<ul>
+<li>void lock()：获得锁</li>
+<li>void unlock()：释放锁</li>
+</ul>
+<p>Lock是接口不能直接实例化，这里采取它的实现类ReentrantLock来实例化</p>
+<p>ReentrantLock的构造方法</p>
+<ul>
+<li>ReentrantLock()：创建一个ReentrantLock的实例</li>
+</ul>
+<h2 id="生产者消费者"><a href="#生产者消费者" class="headerlink" title="生产者消费者"></a>生产者消费者</h2><p>为了体现生产和消费过程中的等待和唤醒，Java就提供了几个方法供我们使用，这几个方法在Object类中</p>
+<table>
+<thead>
+<tr>
+<th align="center">方法名</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">void wait()</td>
+<td align="center">导致当前线程等待，直到另一个线程调用该对象的notify()方法或notifyAll()方法</td>
+</tr>
+<tr>
+<td align="center">void notify()</td>
+<td align="center">唤醒正在等待对象监视器的单个线程</td>
+</tr>
+<tr>
+<td align="center">void notifyAll()</td>
+<td align="center">唤醒正在等待对象监视器的所有线程</td>
+</tr>
+</tbody></table>
 ]]></content>
       <tags>
         <tag>多线程</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Java集合知识点总结</title>
-    <url>/p/1dfa12bb.html</url>
-    <content><![CDATA[<h2 id="List"><a href="#List" class="headerlink" title="List"></a>List</h2><h3 id="数组ArraryList"><a href="#数组ArraryList" class="headerlink" title="数组ArraryList"></a>数组ArraryList</h3><p>数组是一种<strong>查询修改快</strong>的模型（对比链表）  </p>
-<h3 id="链表LinkedList"><a href="#链表LinkedList" class="headerlink" title="链表LinkedList"></a>链表LinkedList</h3><p>链表是一种<strong>增删快</strong>的模型（对比数组）</p>
-<p>特有功能：addFist，addLast，getFirst，getLast，removeFirst，removeLast</p>
-<h2 id="Set"><a href="#Set" class="headerlink" title="Set"></a>Set</h2><h3 id="Set集合特点"><a href="#Set集合特点" class="headerlink" title="Set集合特点"></a>Set集合特点</h3><ul>
-<li><p>不包含重复元素的集合</p>
-</li>
-<li><p>没有带索引的方法，不能用普通for循环遍历</p>
-</li>
-</ul>
-<p>HashSet：对集合的迭代顺序不作任何保证</p>
-<h3 id="哈希值"><a href="#哈希值" class="headerlink" title="哈希值"></a>哈希值</h3><p>哈希值：是JDK根据对象的<strong>地址</strong>或者<strong>字符串</strong>或者<strong>数字</strong>算出来的int类型的<strong>数值</strong></p>
-<p>Object类中有一个方法可以获取对象的哈希值</p>
-<ul>
-<li>public int hashCode(): 返回对象的哈希值</li>
-</ul>
-<p>对象的哈希值特点</p>
-<ul>
-<li>同一个对象多次调用hashCode()返回的哈希值是相同的</li>
-<li>默认情况下，不同对象的哈希值是不同的。而重写hashCode()方法，可以实现让不同对象的哈希值相同</li>
-</ul>
-<h3 id="HashSet"><a href="#HashSet" class="headerlink" title="HashSet"></a>HashSet</h3><p>HashSet集合特点</p>
-<ul>
-<li>底层数据结构是哈希表</li>
-<li>对集合的迭代顺序不作任何保证，也就是说不保证存储和取出的元素顺序一致</li>
-<li>没有带索引的方法，所以不能使用普通的for循环遍历</li>
-<li>由于是Set集合，所以是不包含重复元素的集合</li>
-</ul>
-<p>HashSet集合保证元素唯一性源码分析</p>
-<p><img src="http://image.xiaoke6.cn/images/bloghash.png"></p>
-<p>HashSet集合存储元素：</p>
-<ul>
-<li>要保证元素唯一性，需要重写<strong>hashCode()和equals()</strong></li>
-</ul>
-<h3 id="LinkedHashSet"><a href="#LinkedHashSet" class="headerlink" title="LinkedHashSet"></a>LinkedHashSet</h3><p>LinkedHashSet集合特点</p>
-<ul>
-<li>哈希表和链表实现的Set接口，具有可预测的迭代次序</li>
-<li>由链表保证元素有序，也就是说元素的存储和取出顺序是一致的</li>
-<li>由哈希表保证元素唯一，也就是说没有重复的元素</li>
-</ul>
-<h3 id="TreeSet"><a href="#TreeSet" class="headerlink" title="TreeSet"></a>TreeSet</h3><p>TreeSet集合特点</p>
-<ul>
-<li><p>元素有序，这里的顺序不是指存储和取出的顺序，而是按照一定的规则进行排序，具体排序方式取决于构造方法</p>
-<p>TreeSet(): 根据其元素的自然排序进行排序</p>
-<p>TreeSet(Comparator comparator): 根据指定的比较器进行排序</p>
-</li>
-<li><p>没有带索引的方法，所以不能使用普通的for循环遍历</p>
-</li>
-<li><p>由于是Set集合，所以不包含重复元素的集合</p>
-</li>
-</ul>
-<p>自然排序Comparable的使用</p>
-<ul>
-<li>用TreeSet集合存储自定义对象，无参构造方法使用的是<strong>自然排序</strong>对元素进行排序的</li>
-<li>自然排序，就是让元素所属的类实现Comparable接口，重写comparaTo()方法</li>
-<li>重写方法时，一定要注意排序规则必须按照要求的主要条件和次要条件来写</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Student</span> <span class="keyword">implements</span> <span class="title">Comparable</span>&lt;<span class="title">Student</span>&gt; </span>&#123;</span><br><span class="line">    ...</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">compareTo</span><span class="params">(Student s)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//return -1; //-1按照降序，1按照升序，0重复元素不添加</span></span><br><span class="line">        <span class="comment">// 按照年龄从小到大排序,年龄相同，按照姓名字母顺序排序</span></span><br><span class="line">        <span class="keyword">int</span> num = <span class="keyword">this</span>.age - s.age;</span><br><span class="line">        <span class="keyword">int</span> num2 = num==<span class="number">0</span>?<span class="keyword">this</span>.name.compareTo(s.name):num;</span><br><span class="line">        <span class="keyword">return</span> num2;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-<p>比较器排序Comparator的使用</p>
-<ul>
-<li>用TreeSet集合存储自定义对象，带参构造方法使用的是比较器排序对元素进行排序的</li>
-<li>比较器排序，就是让集合构造方法接受Comparator的实现类对象，重写compare(T o1, T o2)方法</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">TreeSet&lt;Student&gt; ts = <span class="keyword">new</span> TreeSet&lt;&gt;(<span class="keyword">new</span> Comparator&lt;Student&gt;() &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">compare</span><span class="params">(Student s1, Student s2)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 按照年龄从小到大排序,年龄相同，按照姓名字母顺序排序</span></span><br><span class="line">        <span class="comment">//this.age - s.age</span></span><br><span class="line">        <span class="comment">//s1,s1</span></span><br><span class="line">        <span class="keyword">int</span> num = s1.getAge() - s2.getAge();</span><br><span class="line">        <span class="keyword">int</span> num2 = num==<span class="number">0</span>? s1.getName().compareTo(s2.getName()):num;</span><br><span class="line">        <span class="keyword">return</span> num2;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-
-
-
-<h2 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h2><p><strong>Map集合遍历</strong></p>
-<p><strong>方法一：增强for循环中使用entry来遍历</strong></p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Map&lt;Integer, Integer&gt; map = <span class="keyword">new</span> HashMap&lt;Integer, Integer&gt;();</span><br><span class="line"> </span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (Map.Entry&lt;Integer, Integer&gt; entry : map.entrySet()) &#123;</span><br><span class="line"> </span><br><span class="line">    System.out.println(<span class="string">&quot;Key = &quot;</span> + entry.getKey() + <span class="string">&quot;, Value = &quot;</span> + entry.getValue());</span><br><span class="line"> </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><strong>方法二：在for-each循环中遍历keys或values</strong></p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Map&lt;Integer, Integer&gt; map = <span class="keyword">new</span> HashMap&lt;Integer, Integer&gt;();</span><br><span class="line"> </span><br><span class="line"><span class="comment">//遍历map中的键</span></span><br><span class="line"> </span><br><span class="line"><span class="keyword">for</span> (Integer key : map.keySet()) &#123;</span><br><span class="line"> </span><br><span class="line">    System.out.println(<span class="string">&quot;Key = &quot;</span> + key);</span><br><span class="line"> </span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="comment">//遍历map中的值</span></span><br><span class="line"> </span><br><span class="line"><span class="keyword">for</span> (Integer value : map.values()) &#123;</span><br><span class="line"> </span><br><span class="line">    System.out.println(<span class="string">&quot;Value = &quot;</span> + value);</span><br><span class="line"> </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><strong>方法三：使用Iterator遍历</strong></p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Map&lt;Integer, Integer&gt; map = <span class="keyword">new</span> HashMap&lt;Integer, Integer&gt;();</span><br><span class="line"> </span><br><span class="line">Iterator&lt;Map.Entry&lt;Integer, Integer&gt;&gt; entries = map.entrySet().iterator();</span><br><span class="line"> </span><br><span class="line"><span class="keyword">while</span> (entries.hasNext()) &#123;</span><br><span class="line"> </span><br><span class="line">    Map.Entry&lt;Integer, Integer&gt; entry = entries.next();</span><br><span class="line"> </span><br><span class="line">    System.out.println(<span class="string">&quot;Key = &quot;</span> + entry.getKey() + <span class="string">&quot;, Value = &quot;</span> + entry.getValue());</span><br><span class="line"> </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><strong>方法四：通过键找值遍历（效率低）</strong></p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Map&lt;Integer, Integer&gt; map = <span class="keyword">new</span> HashMap&lt;Integer, Integer&gt;();</span><br><span class="line"> </span><br><span class="line"><span class="keyword">for</span> (Integer key : map.keySet()) &#123;</span><br><span class="line"> </span><br><span class="line">    Integer value = map.get(key);</span><br><span class="line"> </span><br><span class="line">    System.out.println(<span class="string">&quot;Key = &quot;</span> + key + <span class="string">&quot;, Value = &quot;</span> + value);</span><br><span class="line"> </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><strong>总结：</strong></p>
-<p>如果仅需要键(keys)或值(values)使用方法二。如果你使用的语言版本低于java 5，或是打算在遍历时删除entries，必须使用方法三。否则使用方法一(键值都要)</p>
-]]></content>
-      <categories>
-        <category>Java</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
-        <tag>JavaSE</tag>
-        <tag>Collection</tag>
       </tags>
   </entry>
   <entry>
