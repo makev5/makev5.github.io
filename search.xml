@@ -1,24 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Hello World</title>
-    <url>/p/4a17b156.html</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
-  </entry>
-  <entry>
     <title>IO流基本知识总结</title>
     <url>/p/42f7140.html</url>
     <content><![CDATA[<h2 id="Java-IO流学习总结"><a href="#Java-IO流学习总结" class="headerlink" title="Java IO流学习总结"></a>Java IO流学习总结</h2><h2 id="IO流的分类"><a href="#IO流的分类" class="headerlink" title="IO流的分类"></a>IO流的分类</h2><ul>
@@ -386,6 +368,24 @@
       </tags>
   </entry>
   <entry>
+    <title>Hello World</title>
+    <url>/p/4a17b156.html</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
     <title>多线程知识点总结</title>
     <url>/p/66e505b.html</url>
     <content><![CDATA[<h2 id="多线程知识总结"><a href="#多线程知识总结" class="headerlink" title="多线程知识总结"></a>多线程知识总结</h2><h2 id="什么是进程"><a href="#什么是进程" class="headerlink" title="什么是进程"></a>什么是进程</h2><p>进程：是一个正在运行的程序</p>
@@ -537,6 +537,9 @@
 </tr>
 </tbody></table>
 ]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
       <tags>
         <tag>多线程</tag>
       </tags>
@@ -576,8 +579,94 @@
 <figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MAX 100</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="comment">//定义结点 </span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">BiTNode</span>&#123;</span></span><br><span class="line">    <span class="keyword">char</span> data;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">BiTNode</span> *<span class="title">lchild</span>,*<span class="title">rchild</span>;</span></span><br><span class="line">&#125;BiTNode,*BiTree;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">BiTNode</span> *<span class="title">ElemType</span>;</span> </span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span>&#123;</span></span><br><span class="line">    ElemType data[MAX];</span><br><span class="line">    <span class="keyword">int</span> front,rear;</span><br><span class="line">&#125;SqQueue;</span><br><span class="line"></span><br><span class="line"><span class="comment">//先序建立二叉树</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">CreatBiTree</span><span class="params">(BiTree &amp;T)</span></span>&#123;</span><br><span class="line">    <span class="keyword">char</span> ch;</span><br><span class="line">    cin&gt;&gt;ch;</span><br><span class="line">    <span class="keyword">if</span>(ch==<span class="string">&#x27;#&#x27;</span>)&#123;</span><br><span class="line">        T=<span class="literal">NULL</span>;</span><br><span class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span>(ch!=<span class="string">&#x27;#&#x27;</span> &amp;&amp; ch!=<span class="string">&#x27;!&#x27;</span>)&#123;</span><br><span class="line">        T=<span class="keyword">new</span> BiTNode;</span><br><span class="line">        T-&gt;data=ch;</span><br><span class="line">        <span class="built_in">CreatBiTree</span>(T-&gt;lchild);</span><br><span class="line">        <span class="built_in">CreatBiTree</span>(T-&gt;rchild);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//初始化循环队列</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">InitQueue</span><span class="params">(SqQueue &amp;Q)</span></span>&#123;</span><br><span class="line">    Q.front = Q.rear=<span class="number">0</span>;<span class="comment">//队头和队尾相等即为空队列 </span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//进队 </span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">EnQueue</span><span class="params">(SqQueue &amp;Q,BiTree bt)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>((Q.rear+<span class="number">1</span>) % MAX == Q.front)&#123;</span><br><span class="line">        cout&lt;&lt;<span class="string">&quot;队列满了无法入队&quot;</span>&lt;&lt;endl;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        Q.rear = (Q.rear+<span class="number">1</span>) % MAX;</span><br><span class="line">		Q.data[Q.rear] = bt;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//出队 </span></span><br><span class="line"><span class="function">BiTree <span class="title">OutQueue</span><span class="params">(SqQueue &amp;Q)</span></span>&#123;</span><br><span class="line">    BiTree bt;</span><br><span class="line">    <span class="keyword">if</span>(Q.front==Q.rear)&#123;</span><br><span class="line">        cout&lt;&lt;<span class="string">&quot;队列空了无法出队&quot;</span>&lt;&lt;endl;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        Q.front = (Q.front+<span class="number">1</span>) % MAX;</span><br><span class="line">        bt = Q.data[Q.front];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> bt;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//判断空队 </span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">EmptyQueue</span><span class="params">(SqQueue Q)</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> (Q.front==Q.rear);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//层次顺序遍历:先进先出符合队列，先让第一层结点入队，然后依次入队；</span></span><br><span class="line"><span class="comment">//依次出队就为层次顺序遍历</span></span><br><span class="line"><span class="comment">//度为1的结点个数</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">Level</span><span class="params">(BiTree bt)</span></span>&#123;</span><br><span class="line">	BiTree p;</span><br><span class="line">	SqQueue Q;</span><br><span class="line">	<span class="keyword">int</span> num=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">if</span>(bt)&#123;</span><br><span class="line">		<span class="built_in">InitQueue</span>(Q);</span><br><span class="line">		<span class="built_in">EnQueue</span>(Q, bt);</span><br><span class="line">		<span class="keyword">while</span>(!<span class="built_in">EmptyQueue</span>(Q))&#123;</span><br><span class="line">			p=<span class="built_in">OutQueue</span>(Q);</span><br><span class="line">			cout&lt;&lt;p-&gt;data;</span><br><span class="line">			<span class="keyword">if</span>((p-&gt;lchild &amp;&amp; !p-&gt;rchild) ||(!p-&gt;lchild &amp;&amp; p-&gt;rchild))&#123;</span><br><span class="line">				num++;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">if</span>(p-&gt;lchild)&#123;</span><br><span class="line">                <span class="built_in">EnQueue</span>(Q,p-&gt;lchild);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(p-&gt;rchild)&#123;</span><br><span class="line">                <span class="built_in">EnQueue</span>(Q,p-&gt;rchild);</span><br><span class="line">            &#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> (num);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    BiTree T;</span><br><span class="line">    cout&lt;&lt;<span class="string">&quot;先序遍历顺序建立二叉树为：&quot;</span>&lt;&lt;endl;</span><br><span class="line">    <span class="built_in">CreatBiTree</span>(T);</span><br><span class="line">	cout&lt;&lt; <span class="string">&quot;层次遍历后,度为1的结点个数为：&quot;</span>&lt;&lt;<span class="built_in">Level</span>(T)&lt;&lt;endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 ]]></content>
+      <categories>
+        <category>C++</category>
+      </categories>
       <tags>
         <tag>C++</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>网络编程基础知识</title>
+    <url>/p/76d9b2bc.html</url>
+    <content><![CDATA[<h3 id="网络编程"><a href="#网络编程" class="headerlink" title="网络编程"></a>网络编程</h3><h3 id="三要素：ip-端口-协议"><a href="#三要素：ip-端口-协议" class="headerlink" title="三要素：ip+端口+协议"></a>三要素：ip+端口+协议</h3><p><strong>IP地址</strong></p>
+<ul>
+<li>要想让网络中的计算机能够互相通信，必须为每台计算机指定一个标识号，通过这个标识号来指定要接收数据的计算机和识别发送的计算机，而IP地址就是这个标识号，也就是设备的标识</li>
+<li>InetAddress的使</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">方法名</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">static InetAddress getByName(String host)</td>
+<td align="center">确定主机名称的IP地址。主机名称可以是机器名称，也可以是IP地址</td>
+</tr>
+<tr>
+<td align="center">String getHostName()</td>
+<td align="center">获取此IP地址的主机名</td>
+</tr>
+<tr>
+<td align="center">String getHostAddress()</td>
+<td align="center">返回文本显示中的IP地址字符串</td>
+</tr>
+</tbody></table>
+<p><strong>端口</strong></p>
+<ul>
+<li>网络的通信，本质上是两个应用程序的通信。每台计算机都有很多的应用程序。那么在网络通信时，如何区分这些应用程序呢？如果IP地址可以唯一标识网络中的设备，那么端口号就可以唯一标识设备中的应用程序了。也就是应用程序的标识</li>
+<li>端口号：取值范围0<del>65535。其中0</del>1023之间的端口号用于一些知名的网络服务和应用，普通程序需要使用1024以上的端口号</li>
+</ul>
+<p><strong>协议</strong></p>
+<ul>
+<li>  通过计算机网络可以使多台计算机实现连接，位于一个网络中的计算机在进行连接和通信时需要遵守一定的规则，这就好比在道路中行驶的汽车一定要1遵守交通规则一样。在计算机网络中，这些连接和通信的规则被称为网络通信协议。它对数据的传输格式、传输速率、传输步骤等做了统一的规定，通信双方必须同时遵守才能完成数据交换。常见的协议有<strong>UDP协议和TCP协议</strong></li>
+</ul>
+<h3 id="UDP发送数据"><a href="#UDP发送数据" class="headerlink" title="UDP发送数据"></a>UDP发送数据</h3><p>发送数据的步骤</p>
+<ol>
+<li>创建发送端的Socket对象（DatagramSocket）</li>
+<li>创建数据，并把数据打包</li>
+<li>调用DatagramSocket对象的方法发送数据</li>
+<li>关闭发送端</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">        <span class="comment">// DatagramSocket()构建一个数据报套接字绑定到本地主机的任何可用的端口。</span></span><br><span class="line">        DatagramSocket socket = <span class="keyword">new</span> DatagramSocket();</span><br><span class="line"></span><br><span class="line">        <span class="comment">// DatagramPacket(byte[] buf, int length, InetAddress address, int port)</span></span><br><span class="line">        <span class="comment">// 指定主机上的指定端口发送数据包的长度 length数据报包结构。</span></span><br><span class="line">        <span class="keyword">byte</span>[] bys=<span class="string">&quot;hello 我来了&quot;</span>.getBytes();</span><br><span class="line">        DatagramPacket dp = <span class="keyword">new</span> DatagramPacket(bys, bys.length, InetAddress.getByName(<span class="string">&quot;192.168.31.15&quot;</span>), <span class="number">10086</span>);</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// send(DatagramPacket p) 从这个套接字发送数据报包。</span></span><br><span class="line">        socket.send(dp);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//关闭发送端</span></span><br><span class="line">        <span class="comment">// close() 关闭该数据报套接字。</span></span><br><span class="line">        socket.close();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="UDP接收数据"><a href="#UDP接收数据" class="headerlink" title="UDP接收数据"></a>UDP接收数据</h3><p>接收数据的步骤</p>
+<ol>
+<li>创建接收端的Socket对象（DatagramSocket）</li>
+<li>创建一个数据包，用于接收数据</li>
+<li>调用DatagramSocket对象的方法接收数据</li>
+<li>解析数据包，并在控制台显示</li>
+<li>关闭接收端</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">        <span class="comment">// 1. 创建接收端的Socket对象（DatagramSocket）</span></span><br><span class="line">        DatagramSocket socket = <span class="keyword">new</span> DatagramSocket(<span class="number">10086</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 2. 创建一个数据包，用于接收数据</span></span><br><span class="line">        <span class="keyword">byte</span>[] bys = <span class="keyword">new</span> <span class="keyword">byte</span>[<span class="number">1024</span>];</span><br><span class="line">        DatagramPacket dp = <span class="keyword">new</span> DatagramPacket(bys, bys.length);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 3. 调用DatagramSocket对象的方法接收数据</span></span><br><span class="line">        socket.receive(dp);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 4. 解析数据包，并在控制台显示</span></span><br><span class="line">        <span class="keyword">byte</span>[] data = dp.getData();</span><br><span class="line">        <span class="keyword">int</span> len = dp.getLength();</span><br><span class="line">        String dataString = <span class="keyword">new</span> String(data,<span class="number">0</span>,len);</span><br><span class="line">        System.out.print(<span class="string">&quot;数据是：&quot;</span> + dataString);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 5. 关闭接收端</span></span><br><span class="line">        socket.close();</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="TCP发送数据"><a href="#TCP发送数据" class="headerlink" title="TCP发送数据"></a>TCP发送数据</h3><p>发送数据的步骤</p>
+<ol>
+<li>创建客户端的Socket对象（Socket）</li>
+<li>获取输出流，写数据</li>
+<li>释放资源</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">        <span class="comment">// 1. 创建客户端的Socket对象（Socket）</span></span><br><span class="line">        <span class="comment">// Socket(InetAddress address, int port) 创建一个流套接字，并将其与指定的IP地址中的指定端口号连接起来。</span></span><br><span class="line">        Socket socket = <span class="keyword">new</span> Socket(<span class="string">&quot;192.168.31.15&quot;</span>, <span class="number">10000</span>);</span><br><span class="line">        <span class="comment">// 2. 获取输出流，写数据</span></span><br><span class="line">        <span class="comment">// OutputStream getOutputStream() 返回此套接字的输出流。</span></span><br><span class="line">        OutputStream os = socket.getOutputStream();</span><br><span class="line">        os.write(<span class="string">&quot;hello,tcp,我来了&quot;</span>.getBytes());</span><br><span class="line"></span><br><span class="line">        <span class="comment">//3. 释放资源</span></span><br><span class="line">        socket.close();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="TCP接收数据"><a href="#TCP接收数据" class="headerlink" title="TCP接收数据"></a>TCP接收数据</h3><p>接收数据的步骤</p>
+<ol>
+<li>创建服务器的Socket对象（ServerSocket）</li>
+<li>监听客户端连接，返回一个Socket对象</li>
+<li>获取输入流，读数据，并在控制台显示</li>
+<li>释放资源</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">        <span class="comment">//1. 创建服务器的Socket对象（ServerSocket）</span></span><br><span class="line">        ServerSocket serverSocket = <span class="keyword">new</span> ServerSocket(<span class="number">10000</span>);</span><br><span class="line">    	<span class="comment">//2.监听客户端连接，返回一个Socket对象</span></span><br><span class="line">        Socket socket = serverSocket.accept();</span><br><span class="line">        <span class="comment">//3. 获取输入流，读数据，并在控制台显示</span></span><br><span class="line">        InputStream is = socket.getInputStream();</span><br><span class="line">        <span class="keyword">byte</span>[] bys = <span class="keyword">new</span> <span class="keyword">byte</span>[<span class="number">1024</span>];</span><br><span class="line">        <span class="keyword">int</span> len = is.read(bys);</span><br><span class="line">        String data = <span class="keyword">new</span> String(bys, <span class="number">0</span>, len);</span><br><span class="line">        System.out.println(<span class="string">&quot;数据是：&quot;</span> + data);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//4.释放资源</span></span><br><span class="line">        serverSocket.close();</span><br><span class="line">        socket.close();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>网络编程</tag>
       </tags>
   </entry>
 </search>
