@@ -45,37 +45,6 @@
   </entry>
   
   <entry>
-    <title>Junit单元测试、反射、注解</title>
-    <link href="https://makev5.github.io/p/abb177c7.html"/>
-    <id>https://makev5.github.io/p/abb177c7.html</id>
-    <published>2022-01-05T09:55:29.000Z</published>
-    <updated>2022-01-06T13:46:27.210Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="Junit单元测试："><a href="#Junit单元测试：" class="headerlink" title="Junit单元测试："></a>Junit单元测试：</h3><ul><li><p>测试分类：</p><ol><li>黑盒测试：不需要写代码，给输入值，看程序是否能够输出期望的值。</li><li>白盒测试：需要写代码的。关注程序具体的执行流程。</li></ol></li><li><p>Junit使用：白盒测试</p><ul><li><p>步骤：</p><ol><li><p>定义一个测试类(测试用例)</p><ul><li>建议：<ul><li>测试类名：被测试的类名Test        CalculatorTest</li><li>包名：xxx.xxx.xx.test        cn.itcast.test</li></ul></li></ul></li><li><p>定义测试方法：可以独立运行</p><ul><li>建议：<ul><li>方法名：test测试的方法名        testAdd()  </li><li>返回值：void</li><li>参数列表：空参</li></ul></li></ul></li><li><p>给方法加@Test</p></li><li><p>导入junit依赖环境</p></li></ol></li><li><p>判定结果：</p><ul><li>红色：失败</li><li>绿色：成功</li><li>一般我们会使用断言操作来处理结果<ul><li>Assert.assertEquals(期望的结果,运算的结果);</li></ul></li></ul></li><li><p>补充：</p><ul><li>@Before:<ul><li>修饰的方法会在测试方法之前被自动执行</li></ul></li><li>@After:<ul><li>修饰的方法会在测试方法执行之后自动被执行</li></ul></li></ul></li></ul></li></ul><h3 id="反射：框架设计的灵魂"><a href="#反射：框架设计的灵魂" class="headerlink" title="反射：框架设计的灵魂"></a>反射：框架设计的灵魂</h3><ul><li>框架：半成品软件。可以在框架的基础上进行软件开发，简化编码</li><li>反射：将类的各个组成部分封装为其他对象，这就是反射机制<ul><li>好处：<ol><li>可以在程序运行过程中，操作这些对象。</li><li>可以解耦，提高程序的可扩展性。</li></ol></li></ul></li></ul><ul><li><p>Class对象功能：</p><ul><li><p>获取功能：</p><ol><li><p>获取成员变量们</p><ul><li><p>Field[] getFields() ：获取所有public修饰的成员变量</p></li><li><p>Field getField(String name)   获取指定名称的 public修饰的成员变量</p></li><li><p>Field[] getDeclaredFields()  获取所有的成员变量，不考虑修饰符</p></li><li><p>Field getDeclaredField(String name)  </p></li></ul></li><li><p>获取构造方法们</p><ul><li><p>Constructor&lt;?&gt;[] getConstructors()  </p></li><li><p>Constructor<T> getConstructor(类&lt;?&gt;… parameterTypes)  </p></li><li><p>Constructor<T> getDeclaredConstructor(类&lt;?&gt;… parameterTypes)  </p></li><li><p>Constructor&lt;?&gt;[] getDeclaredConstructors()  </p></li></ul></li><li><p>获取成员方法们：</p><ul><li><p>Method[] getMethods()  </p></li><li><p>Method getMethod(String name, 类&lt;?&gt;… parameterTypes)  </p></li><li><p>Method[] getDeclaredMethods()  </p></li><li><p>Method getDeclaredMethod(String name, 类&lt;?&gt;… parameterTypes)  </p></li></ul></li><li><p>获取全类名    </p><ul><li>String getName()  </li></ul></li></ol></li></ul></li><li><p>Field：成员变量</p><ul><li><p>操作：</p><ol><li><p>设置值</p><ul><li>void set(Object obj, Object value)  </li></ul></li><li><p>获取值</p><ul><li>get(Object obj) </li></ul></li><li><p>忽略访问权限修饰符的安全检查</p><ul><li>setAccessible(true):暴力反射</li></ul></li></ol></li></ul></li><li><p>Constructor:构造方法</p><ul><li>创建对象：<ul><li>T newInstance(Object… initargs)  </li><li>如果使用空参数构造方法创建对象，操作可以简化：Class对象的newInstance方法</li></ul></li></ul></li><li><p>Method：方法对象</p><ul><li><p>执行方法：</p><ul><li>Object invoke(Object obj, Object… args)  </li></ul></li><li><p>获取方法名称：</p><ul><li>String getName:获取方法名</li></ul></li></ul></li></ul>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h3 id=&quot;Junit单元测试：&quot;&gt;&lt;a href=&quot;#Junit单元测试：&quot; class=&quot;headerlink&quot; title=&quot;Junit单元测试：&quot;&gt;&lt;/a&gt;Junit单元测试：&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;测试分类：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;黑盒测试：不需要写代</summary>
-      
-    
-    
-    
-    <category term="Java" scheme="https://makev5.github.io/categories/Java/"/>
-    
-    
-    <category term="Junit" scheme="https://makev5.github.io/tags/Junit/"/>
-    
-    <category term="反射" scheme="https://makev5.github.io/tags/%E5%8F%8D%E5%B0%84/"/>
-    
-    <category term="注解" scheme="https://makev5.github.io/tags/%E6%B3%A8%E8%A7%A3/"/>
-    
-  </entry>
-  
-  <entry>
     <title>网络编程基础知识</title>
     <link href="https://makev5.github.io/p/76d9b2bc.html"/>
     <id>https://makev5.github.io/p/76d9b2bc.html</id>
